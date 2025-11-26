@@ -23,6 +23,8 @@ _`.github`, `.editorconfig`, `.eslintrc`, `.gitattributes`, `.gitignore`, `.lint
   git version 2.42.0.windows.1
   ```
 
+  ![проверка версии git](assets/git.png)
+
   версия не важна. Главное, что git отреагировал и написал ответ
 
 - для _Node.js_
@@ -36,6 +38,8 @@ _`.github`, `.editorconfig`, `.eslintrc`, `.gitattributes`, `.gitignore`, `.lint
   ```bash
   v18.18.0
   ```
+
+  ![проверка версии node.js](assets/node.png)
 
   важно, чтобы была действующая LTS версия (первое число — чётное), то есть не ниже 20.9 или не ниже 18.18.
 
@@ -313,3 +317,4 @@ _`.github`, `.editorconfig`, `.eslintrc`, `.gitattributes`, `.gitignore`, `.lint
 ```
 
 Таким образом, вы можете удобно организовать и внедрить сторонние библиотеки в ваш проект, сохраняя их структуру в папке `source/vendor/`.
+

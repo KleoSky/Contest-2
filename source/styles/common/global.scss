@@ -12,9 +12,10 @@ body {
 }
 
 body {
-  font-family: 'TT Commons Pro', 'Google Sans Flex', sans-serif;
-  font-size: size-desktop(16px);
+  font-family: "TT Commons Pro", "Google Sans Flex", sans-serif;
+  font-size: size-desktop($fz-default);
   font-weight: 500;
+  line-height: 140%;
 }
 
 img {
