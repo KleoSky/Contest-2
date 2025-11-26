@@ -21,3 +21,6 @@ insert_final_newline = true
 
 [*.svg]
 insert_final_newline = false
+
+[*.{html, css, js, json}]
+end_of_line = crlf
