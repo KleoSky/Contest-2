@@ -1,0 +1,14 @@
+.hero__video-wrapper,
+.hero__video-wrapper video {
+  height: 230px;
+  border-radius: 15px;
+}
+
+.hero__video-wrapper {
+  width: 456px;
+}
+
+.hero__video-wrapper video {
+  width: 100%;
+  object-fit: cover;
+}
