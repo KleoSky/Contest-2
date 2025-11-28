@@ -12,10 +12,20 @@ body {
 }
 
 body {
-  font-family: "TT Commons Pro", "Google Sans Flex", sans-serif;
+  font-family: $ff-primary;
   font-size: size-desktop($fz-default);
   font-weight: 500;
   line-height: 140%;
+  color: $color-main;
+  background-color: $background-main;
+
+  @include vp-1439 {
+    font-size: size-desktop($fz-default);
+  }
+
+  @include vp-767 {
+    font-size: size-tablet($fz-default);
+  }
 }
 
 img {

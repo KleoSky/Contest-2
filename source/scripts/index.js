@@ -1,1 +1,5 @@
-/* в этот файл добавляет скрипты*/
+import { initMenu } from './modules/burger-menu';
+
+window.addEventListener('DOMContentLoaded', () => {
+  initMenu();
+});

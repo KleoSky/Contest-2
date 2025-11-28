@@ -11,7 +11,7 @@
   <link rel="icon" href="favicons/icon.svg" type="image/svg+xml">
   <link rel="icon" sizes="32x32" href="favicons/32.png" type="image/png">
   <link rel="apple-touch-icon" href="favicons/apple.png">
-  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="manifest" href="manifest.webmanifest" crossorigin="use-credentials">
   <script src="scripts/index.js" defer></script>
 </head>
 
@@ -28,50 +28,53 @@
             <img src="images/logo-text.svg" width="52" height="17" alt="Логотип сайта Only Digital">
           </picture>
         </a>
-        <nav class="header__main-nav main-nav main-nav--opened">
-          <ul class="main-nav__list">
-            <li class="main-nav__item">
-              <a class="main-nav__link" href="#projects">Проекты</a>
-            </li>
-            <li class="main-nav__item">
-              <a class="main-nav__link" href="#hero">Компания</a>
-            </li>
-            <li class="main-nav__item">
-              <a class="main-nav__link" href="#">Направления</a>
-            </li>
-            <li class="main-nav__item">
-              <a class="main-nav__link" href="#contacts">Контакты</a>
-            </li>
-            <li class="main-nav__item">
-              <a class="main-nav__link" href="#">Блог</a>
-            </li>
-            <li class="main-nav__item">
-              <a class="main-nav__link" href="#">Карьера</a>
-            </li>
-          </ul>
-          <button class="header__burger button-burger button-burger--closed" type="button">
-            <span class="visually-hidden">Открыть меню навигации</span>
-          </button>
-        </nav>
-        <button class="header__favorities-button" type="button">
-          <div class="header__favorities-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="27" height="34" role="img">
-              <use href="icons/stack.svg#star-icon"></use>
-            </svg>
-          </div>
-          <span class="visually-hidden">Добавить в избранное</span>
-          <span class="header__favourites-counter">40</span>
-        </button>
       </div>
+      <nav class="header__main-nav main-nav">
+        <ul class="main-nav__list">
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="#projects" target="_blank">Проекты</a>
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="#hero" target="_blank">Компания</a>
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="#" target="_blank">Направления</a>
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="#footer" target="_blank">Контакты</a>
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="#" target="_blank">Блог</a>
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="#" target="_blank">Карьера</a>
+          </li>
+        </ul>
+        <button class="main-nav__burger button-burger button-burger--closed" type="button">
+          <span class="visually-hidden">Открыть меню навигации</span>
+        </button>
+        <div class="main-nav__statistic">
+          <span class="visually-hidden">Реализовано проектов</span>
+          <span class="main-nav__statistic-counter">40</span>
+          <span class="main-nav__statistic-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20" role="img"
+              aria-label="Логотип сайта Only Digital">
+              <path
+                d="m11.82 0 2.46 5.23 5.25-2.42-1.48 5.59 5.58 1.52-4.72 3.33 3.3 4.75-5.77-.48-.52 5.76-4.1-4.08-4.1 4.08-.53-5.76-5.77.48 3.3-4.75-4.72-3.33 5.58-1.52-1.48-5.6 5.25 2.43 2.47-5.23Z"
+                fill="currentColor" />
+            </svg>
+          </span>
+        </div>
+      </nav>
     </div>
   </header>
   <main class="page__main main">
     <section class="main__hero hero">
       <div class="hero__wrapper container">
         <div class="hero__main-content">
-          <h1 class="hero__title">Creative digital production</h1>
+          <h1 class="hero__title">Creative digital<br>production</h1>
           <div class="hero__video-wrapper">
-            <video autoplay muted loop playsinline="1">
+            <video autoplay muted loop>
               <source type="video/mp4" src="videos/hero-video.mp4">
             </video>
             <span class="visually-hidden">Примеры выполненных проектов</span>
@@ -88,11 +91,12 @@
                   </span>
                   <span class="hero__awards-tooltip-text">AWWWARDS</span>
                 </p>
-                <span class="hero__awards-counter">25</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="37" height="26" role="img"
-                  aria-label="Логотип компании AWWWARDS">
-                  <use href="icons/stack.svg#w-icon"></use>
-                </svg>
+                <div class="hero__awards-main">
+                  <span class="hero__awards-counter">25</span>
+                  <a class="hero__awards-link" href="#awards">
+                    <img src="images/w-icon.svg" width="37" height="26" alt="Логотип компании AWWWARDS">
+                  </a>
+                </div>
               </li>
               <li class="hero__awards-item">
                 <p class="hero__awards-tooltip">
@@ -103,11 +107,12 @@
                   </span>
                   <span class="hero__awards-tooltip-text">XMLID</span>
                 </p>
-                <span class="hero__awards-counter">1</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="37" height="26" role="img"
-                  aria-label="Логотип компании XMLID">
-                  <use href="icons/stack.svg#fwa-icon"></use>
-                </svg>
+                <div class="hero__awards-main">
+                  <span class="hero__awards-counter">1</span>
+                  <a class="hero__awards-link" href="#awards">
+                    <img src="images/fwa-icon.svg" width="37" height="26" alt="Логотип компании XMLID">
+                  </a>
+                </div>
               </li>
               <li class="hero__awards-item">
                 <p class="hero__awards-tooltip">
@@ -118,11 +123,12 @@
                   </span>
                   <span class="hero__awards-tooltip-text">СSS Design</span>
                 </p>
-                <span class="hero__awards-counter">26</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="37" height="26" role="img"
-                  aria-label="Логотип компании СSS Design">
-                  <use href="icons/stack.svg#shape-icon"></use>
-                </svg>
+                <div class="hero__awards-main">
+                  <span class="hero__awards-counter">26</span>
+                  <a class="hero__awards-link" href="#awards">
+                    <img src="images/shape-icon.svg" width="37" height="26" alt="Логотип компании СSS Design">
+                  </a>
+                </div>
               </li>
               <li class="hero__awards-item">
                 <p class="hero__awards-tooltip">
@@ -131,13 +137,14 @@
                       <use href="icons/stack.svg#finger-icon"></use>
                     </svg>
                   </span>
-                  <span class="hero__awards-tooltip">Рейтинг Рунета</span>
+                  <span class="hero__awards-tooltip-text">Рейтинг Рунета</span>
                 </p>
-                <span class="hero__awards-counter">22</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="37" height="26" role="img"
-                  aria-label="Логотип компании Рейтинг Рунета">
-                  <use href="icons/stack.svg#finger-icon"></use>
-                </svg>
+                <div class="hero__awards-main">
+                  <span class="hero__awards-counter">22</span>
+                  <a class="hero__awards-link" href="#awards">
+                    <img src="images/finger-icon.svg" width="37" height="26" alt="Логотип компании Рейтинг Рунета">
+                  </a>
+                </div>
               </li>
               <li class="hero__awards-item">
                 <p class="hero__awards-tooltip">
@@ -146,13 +153,14 @@
                       <use href="icons/stack.svg#union-icon"></use>
                     </svg>
                   </span>
-                  <span class="hero__awards-tooltip">Золотой Сайт</span>
+                  <span class="hero__awards-tooltip-text">Золотой Сайт</span>
                 </p>
-                <span class="hero__awards-counter">40</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="37" height="26" role="img"
-                  aria-label="Логотип компании Золотой Сайт">
-                  <use href="icons/stack.svg#union-icon"></use>
-                </svg>
+                <div class="hero__awards-main">
+                  <span class="hero__awards-counter">40</span>
+                  <a class="hero__awards-link" href="#awards">
+                    <img src="images/union-icon.svg" width="37" height="26" alt="Логотип компании Золотой Сайт">
+                  </a>
+                </div>
               </li>
             </ul>
           </div>
@@ -162,24 +170,31 @@
           <div class="about__experience">
             <p class="about__experience-counter">10</p>
             <span class="about__experience-years">Лет</span>
-            <span class="about__experience-text">Лучший креативный разработчик для b2b</span>
+            <span class="about__experience-text">Лучший креативный<br>разработчик для b2b</span>
           </div>
           <div class="about__contacts contacts">
-            <a class="contacts__email" href="mailto:hello@only.digital">hello@only.digital</a>
-            <a class="contacts__phone" href="tel:+74957409979">+7 (495) 740 99 79</a>
+            <div class="contacts__main">
+              <a class="contacts__email" href="mailto:hello@only.digital">hello@only.digital</a>
+              <a class="contacts__phone" href="tel:+74957409979">+7 (495) 740 99 79</a>
+            </div>
             <div class="contacts__tg">
               <span class="contacts__tg-text">Telegram для связи</span>
-              <a class="contacts__tg-address" href="t.me/onlydigitalagency">@onlydigitalagency</a>
+              <a class="contacts__tg-address" href="t.me/onlydigitalagency">@onlydigitalagency
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" role="img" aria-label="Перейти в телеграмм-канал компании">
+                  <use href="icons/stack.svg#tg-icon"></use>
+                </svg>
+              </a>
             </div>
           </div>
-          <div class="about__misson">
-            <p class="about__misson-description">Only.digital — агентство с фокусом на сильную аналитику, дизайн и разработку.
-              В основе наших проектов лежат идеи, создаваемые на стыке стратегии, креатива и технологий.</p>
-            <div class="about__misson-presentation">
-              <a class="about__misson-file" href="#" target="_blank" aria-label="Скачать pdf-файл с перезетацией" download>pdf</a>
-              <a class="about__misson-pitch" href="https://disk.yandex.ru/i/wNhvDBRf6a--9Q" target="_blank" aria-label="Посмотреть видео-презентацию">pitch</a>
-              <span>Презентация компании</span>
-            </div>
+          <p class="about__misson">Only.digital — агентство с фокусом на сильную аналитику, дизайн и
+            разработку.
+            В основе наших проектов лежат идеи, создаваемые на стыке стратегии, креатива и технологий.</p>
+          <div class="about__misson-presentation">
+            <a class="about__misson-file" href="#" target="_blank" aria-label="Скачать pdf-файл с перезетацией"
+              download>pdf</a>
+            <a class="about__misson-pitch" href="https://disk.yandex.ru/i/wNhvDBRf6a--9Q" target="_blank"
+              aria-label="Посмотреть видео-презентацию">pitch</a>
+            <span>Презентация<br>компании</span>
           </div>
           <button class="about__button main-button" type="button">Начать проект</button>
         </div>

@@ -1,5 +1,55 @@
 .header {
-  background-color: #663399;
-  color: #ffffff;
-  padding: 10px 15px;
+  padding: size(12px) size(30px);
+  border-bottom: 1px solid $color-liner;
+
+  @include max-tablet {
+    position: relative;
+  }
+
+  @include tablet {
+    padding: size-tablet(10px) size-tablet(20px);
+  }
+
+  @include mobile {
+    padding: size-mobile(10px) size-mobile(15px);
+  }
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__logo-text {
+  height: min-content;
+}
+
+.header__logo-text img {
+  width: size(73px);
+  height: size(34px);
+  line-height: 1;
+  display: block;
+  transition: transform 0.3s ease;
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+    transition: transform 0.3s ease;
+  }
+
+  @include tablet {
+    width: size-tablet(55px);
+    height: size-tablet(18px);
+  }
+
+  @include mobile {
+    width: size-mobile(52px);
+    height: size-mobile(17px);
+  }
 }
