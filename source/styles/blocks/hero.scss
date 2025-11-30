@@ -253,14 +253,12 @@
   padding: size(10px) size(5px);
   background-color: $color-second;
   border-radius: 12px;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease;
 
   &:hover,
   &:focus,
   &:focus-visible {
-    opacity: 0.8;
     background-color: $background-accent;
-    transition: all 0.3s ease;
   }
 }
 

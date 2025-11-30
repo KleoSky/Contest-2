@@ -41,6 +41,13 @@
   letter-spacing: size(-0.2px);
   text-underline-offset: 4px;
   color: inherit;
+  transition: color 0.3s ease;
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    color: $color-main-transparent;
+  }
 
   @include tablet {
     font-size: size-tablet(15px);

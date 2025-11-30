@@ -11,7 +11,7 @@ body {
   min-height: 100vh;
 }
 
-body {
+html {
   font-family: $ff-primary;
   font-size: size-desktop($fz-default);
   font-weight: 500;
@@ -24,7 +24,11 @@ body {
   }
 
   @include vp-767 {
-    font-size: size-tablet($fz-default);
+    font-size: size-tablet($fz-tablet);
+  }
+
+  @include vp-374 {
+    font-size: size-mobile($fz-tablet);
   }
 }
 

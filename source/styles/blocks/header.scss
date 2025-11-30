@@ -35,12 +35,11 @@
   height: size(34px);
   line-height: 1;
   display: block;
-  transition: transform 0.3s ease;
+  transition: opacity 0.3s ease;
 
   &:hover,
   &:focus {
     opacity: 0.8;
-    transition: transform 0.3s ease;
   }
 
   @include tablet {

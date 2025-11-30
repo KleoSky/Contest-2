@@ -193,14 +193,13 @@
   background-color: $color-second;
   border-radius: 15px;
   padding: size(16px);
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease;
 
   &:hover,
   &:focus,
-  &:focus-visible {
-    opacity: 0.8;
+  &:focus-visible,
+  &:active {
     background-color: $background-accent;
-    transition: all 0.3s ease;
   }
 
   @include tablet {
