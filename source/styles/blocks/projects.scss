@@ -1,0 +1,236 @@
+.projects {
+  min-height: size(1879px);
+  padding: size(130px) size(30px) size(141px);
+
+  @include tablet {
+    padding: size-tablet(78px) size-tablet(20px) 0;
+  }
+}
+
+.projects__wrapper {
+  min-height: min-content;
+  border-top: 1px solid $color-liner;
+  display: grid;
+  grid-template-rows: size(39px) min-content size(39px) min-content min-content;
+  grid-template-columns: repeat(2, size(690px));
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: size(170px);
+    background-color: $color-liner;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include tablet {
+      height: size-tablet(130px);
+    }
+  }
+
+  @include tablet {
+    grid-template-rows: size-tablet(21px) min-content size(19px) min-content min-content;
+    grid-template-columns: repeat(2, size-tablet(357px));
+    column-gap: size-tablet(14px);
+  }
+}
+
+.projects__title {
+  font-size: inherit;
+  line-height: 120%;
+  font-weight: 500;
+  letter-spacing: size(-0.5px);
+  text-transform: lowercase;
+  margin: 0;
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+
+  @include tablet {
+    font-size: size-tablet(13px);
+    letter-spacing: size-tablet(-0.4px);
+  }
+}
+
+.projects__info {
+  min-height: size(170px);
+  margin-bottom: size(40px);
+  padding: 0 size(100px) 0 size(40px);
+  grid-row: 2 / 4;
+  grid-column: 2 / 3;
+
+  @include tablet {
+    min-height: size-tablet(130px);
+    margin-bottom: size-tablet(38px);
+    padding: 0;
+    padding-left: size-tablet(13px);
+  }
+}
+
+.projects__subtitle {
+  font-family: $ff-second;
+  font-size: size(26px);
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: size(-0.8px);
+  margin: 0;
+  margin-bottom: size(22px);
+
+  @include tablet {
+    font-size: size-tablet(20px);
+    letter-spacing: size-tablet(-0.6px);
+    margin-bottom: size-tablet(20px);
+  }
+}
+
+.projects__mission {
+  @include tablet-etalon {
+    display: none;
+  }
+}
+
+.projects__text {
+  width: size(550px);
+  font-weight: 400;
+  letter-spacing: -0.3px;
+  color: $color-main-transparent;
+  display: block;
+
+  @include tablet {
+    width: unset;
+    font-size: size-tablet($fz-tablet);
+    line-height: 140%;
+    letter-spacing: size-tablet(-0.3px);
+  }
+}
+
+.projects__gallery-wrapper {
+  width: size(1380px);
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  grid-row: 4 / 5;
+}
+
+.projects__gallery {
+  margin-bottom: size(80px);
+
+  @include tablet {
+    width: size-tablet(728px);
+    margin-bottom: size-tablet(50px);
+  }
+}
+
+.projects__gallery-title {
+  @include tablet-etalon {
+    display: none;
+  }
+}
+
+.projects__gallery-slider {
+  height: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: size(80px) size(15px);
+
+  @include tablet {
+    gap: size-tablet(59px) size-tablet(14px);
+  }
+}
+
+.projects__gallery-slide {
+  width: size(450px);
+  height: auto;
+
+  @include tablet {
+    width: size-tablet(357px);
+  }
+}
+
+.projects__gallery-link {
+  width: 100%;
+  height: auto;
+  text-decoration: none;
+  color: inherit;
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
+  row-gap: size(10px);
+
+  @include tablet {
+    row-gap: size-tablet(8px);
+  }
+}
+
+.projects__gallery-slide-title {
+  font-family: $ff-second;
+  font-size: size(18px);
+  font-weight: 600;
+  line-height: 125%;
+  letter-spacing: -0.5px;
+  margin: 0;
+  margin-left: size(20px);
+  grid-row: 2 / 3;
+
+  @include tablet {
+    font-size: $fz-tablet;
+    letter-spacing: size-tablet(-0.4px);
+    margin-left: size-tablet(15px);
+  }
+}
+
+.projects__gallery-text {
+  font-size: size($fz-tablet);
+  line-height: 130%;
+  letter-spacing: -0.3px;
+  color: $color-main-transparent;
+  margin: 0;
+  margin-left: size(20px);
+  grid-row: 3 / 4;
+
+  @include tablet {
+    font-size: size-tablet($fz-tablet);
+    letter-spacing: size-tablet(-0.3px);
+    margin-left: size-tablet(15px);
+  }
+}
+
+.projects__gallery-image {
+  width: size(450px);
+  height: size(450px);
+  grid-row: 1 / 2;
+  margin-bottom: size(14px);
+
+  @include tablet {
+    width: size-tablet(357px);
+    height: size-tablet(350px);
+    margin-bottom: size-tablet(12px);
+  }
+}
+
+.projects__gallery-image img {
+  width: size(450px);
+  height: size(450px);
+
+  @include tablet {
+    width: size-tablet(357px);
+    height: size-tablet(350px);
+    object-fit: unset;
+  }
+}
+
+.projects__button {
+  width: size(234px);
+  grid-row: 5 / 6;
+  grid-column: 1 / -1;
+  justify-self: center;
+
+  @include tablet {
+    width: size-tablet(203px);
+  }
+}
