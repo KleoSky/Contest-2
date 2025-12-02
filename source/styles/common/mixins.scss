@@ -32,24 +32,6 @@
   }
 }
 
-@mixin max-desktop {
-  @media (min-width: 1441px) {
-    @content;
-  }
-}
-
-@mixin medium-desktop {
-  @media (min-width: 1266px) and (max-width: 1439px) {
-    @content;
-  }
-}
-
-@mixin small-desktop {
-  @media (min-width: 1024px) and (max-width: 1439px) {
-    @content;
-  }
-}
-
 @mixin max-tablet {
   @media (max-width: 1023px) {
     @content;

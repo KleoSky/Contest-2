@@ -1,9 +1,13 @@
 .projects {
   min-height: size(1879px);
-  padding: size(130px) size(30px) size(141px);
+  padding: size(130px) size(28px) size(141px) size(30px);
 
   @include tablet {
     padding: size-tablet(78px) size-tablet(20px) 0;
+  }
+
+  @include mobile {
+    padding: 0;
   }
 }
 
@@ -12,7 +16,7 @@
   border-top: 1px solid $color-liner;
   display: grid;
   grid-template-rows: size(39px) min-content size(39px) min-content min-content;
-  grid-template-columns: repeat(2, size(690px));
+  grid-template-columns: repeat(2, 1fr);
   position: relative;
 
   &::before {
@@ -29,18 +33,109 @@
     @include tablet {
       height: size-tablet(130px);
     }
+
+    @include mobile {
+      display: none;
+    }
   }
 
   @include tablet {
     grid-template-rows: size-tablet(21px) min-content size(19px) min-content min-content;
-    grid-template-columns: repeat(2, size-tablet(357px));
     column-gap: size-tablet(14px);
+  }
+
+  @include mobile {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+  }
+}
+
+.projects__info {
+  min-height: size(170px);
+  margin-bottom: size(40px);
+  padding: 0 size(100px) 0 size(39px);
+  grid-row: 2 / 4;
+  grid-column: 2 / 3;
+
+  @include tablet {
+    min-height: size-tablet(130px);
+    margin-bottom: size-tablet(38px);
+    padding: 0;
+    padding-left: size-tablet(13px);
+  }
+
+  @include mobile {
+    width: size-mobile(345px);
+    min-height: min-content;
+    margin: 0 auto;
+    padding: size-mobile(70px) 0;
+    border-bottom: 1px solid $color-liner;
   }
 }
 
 .projects__title {
+  font-family: $ff-second;
+  font-size: size(26px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: size(-0.8px);
+  margin: 0;
+  margin-bottom: size(24px);
+
+  @include tablet {
+    font-size: size-tablet(20px);
+    letter-spacing: size-tablet(-0.6px);
+    margin-bottom: size-tablet(20px);
+  }
+
+  @include mobile {
+    font-size: size-mobile(20px);
+    letter-spacing: size-mobile(-0.6px);
+    margin-bottom: size-mobile(15px);
+  }
+}
+
+.projects__mission {
+  @include tablet-etalon {
+    display: none;
+  }
+
+  font-size: size-mobile($fz-tablet);
+  font-weight: 400;
+  letter-spacing: size-mobile(-0.4px);
+  margin: 0;
+  margin-bottom: size-mobile(8px);
+}
+
+.projects__text {
+  width: size(550px);
+  line-height: 1.38;
+  letter-spacing: size(-0.4px);
+  color: $color-main-transparent;
+  margin: 0;
+  display: block;
+
+  @include max-tablet {
+    width: unset;
+  }
+
+  @include tablet {
+    font-size: size-tablet($fz-tablet);
+    letter-spacing: size-tablet(-0.4px);
+  }
+
+  @include mobile {
+    font-size: size-mobile($fz-tablet);
+    letter-spacing: size-mobile(-0.4px);
+    color: inherit;
+  }
+}
+
+.projects__subtitle {
   font-size: inherit;
-  line-height: 120%;
+  line-height: 1.2;
   font-weight: 500;
   letter-spacing: size(-0.5px);
   text-transform: lowercase;
@@ -52,75 +147,39 @@
     font-size: size-tablet(13px);
     letter-spacing: size-tablet(-0.4px);
   }
-}
 
-.projects__info {
-  min-height: size(170px);
-  margin-bottom: size(40px);
-  padding: 0 size(100px) 0 size(40px);
-  grid-row: 2 / 4;
-  grid-column: 2 / 3;
-
-  @include tablet {
-    min-height: size-tablet(130px);
-    margin-bottom: size-tablet(38px);
-    padding: 0;
-    padding-left: size-tablet(13px);
-  }
-}
-
-.projects__subtitle {
-  font-family: $ff-second;
-  font-size: size(26px);
-  font-weight: 600;
-  line-height: 120%;
-  letter-spacing: size(-0.8px);
-  margin: 0;
-  margin-bottom: size(22px);
-
-  @include tablet {
-    font-size: size-tablet(20px);
-    letter-spacing: size-tablet(-0.6px);
-    margin-bottom: size-tablet(20px);
-  }
-}
-
-.projects__mission {
-  @include tablet-etalon {
-    display: none;
-  }
-}
-
-.projects__text {
-  width: size(550px);
-  font-weight: 400;
-  letter-spacing: -0.3px;
-  color: $color-main-transparent;
-  display: block;
-
-  @include tablet {
-    width: unset;
-    font-size: size-tablet($fz-tablet);
-    line-height: 140%;
-    letter-spacing: size-tablet(-0.3px);
+  @include mobile {
+    font-size: size-mobile(12px);
+    letter-spacing: size-mobile(-0.4px);
+    margin: size-mobile(20px) 0 size-mobile(24px) size-mobile(15px);
   }
 }
 
 .projects__gallery-wrapper {
-  width: size(1380px);
+  min-width: size(1382px);
   min-height: auto;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  flex-flow: column wrap;
   grid-row: 4 / 5;
-}
-
-.projects__gallery {
-  margin-bottom: size(80px);
+  grid-column: 1 / -1;
+  margin-bottom: size(79px);
 
   @include tablet {
-    width: size-tablet(728px);
+    min-width: size-tablet(728px);
     margin-bottom: size-tablet(50px);
+  }
+
+  @include mobile {
+    margin-bottom: size-mobile(40px);
+    padding-left: size-mobile(15px);
+  }
+}
+
+.projects__gallery-categories {
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    row-gap: size-mobile(70px);
   }
 }
 
@@ -128,6 +187,14 @@
   @include tablet-etalon {
     display: none;
   }
+
+  font-family: $ff-second;
+  font-size: size-mobile(20px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: size-mobile(-0.6px);
+  margin: 0;
+  margin-bottom: size-mobile(39px);
 }
 
 .projects__gallery-slider {
@@ -137,10 +204,15 @@
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: size(80px) size(15px);
+  gap: size(78px) size(16px);
 
   @include tablet {
     gap: size-tablet(59px) size-tablet(14px);
+  }
+
+  @include mobile {
+    flex-wrap: nowrap;
+    gap: 0 size-mobile(10px);
   }
 }
 
@@ -151,43 +223,67 @@
   @include tablet {
     width: size-tablet(357px);
   }
+
+  @include mobile {
+    width: size-mobile(315px);
+  }
 }
 
-.projects__gallery-link {
+.projects__gallery-slide a {
   width: 100%;
   height: auto;
   text-decoration: none;
   color: inherit;
   display: grid;
   grid-template-rows: repeat(3, min-content);
-  row-gap: size(10px);
+  row-gap: size(11px);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
   @include tablet {
     row-gap: size-tablet(8px);
   }
+
+  @include mobile {
+    row-gap: size-mobile(5px);
+  }
 }
 
-.projects__gallery-slide-title {
+.projects__gallery-slide a:hover .projects__gallery-image {
+  // border-radius: 70px;
+  transform: scale(1.03);
+
+  img {
+    border-radius: 80px;
+  }
+}
+
+.projects__gallery-slide h4 {
   font-family: $ff-second;
   font-size: size(18px);
   font-weight: 600;
-  line-height: 125%;
-  letter-spacing: -0.5px;
+  line-height: 1.25;
+  letter-spacing: size(-0.5px);
   margin: 0;
   margin-left: size(20px);
   grid-row: 2 / 3;
 
   @include tablet {
-    font-size: $fz-tablet;
+    font-size: size-tablet($fz-tablet);
     letter-spacing: size-tablet(-0.4px);
     margin-left: size-tablet(15px);
   }
+
+  @include mobile {
+    font-size: size-mobile($fz-tablet);
+    letter-spacing: size-mobile(-0.4px);
+    margin-left: size-mobile(10px);
+  }
 }
 
-.projects__gallery-text {
+.projects__gallery-slide p {
   font-size: size($fz-tablet);
-  line-height: 130%;
-  letter-spacing: -0.3px;
+  line-height: 1.3;
+  letter-spacing: size(-0.2px);
   color: $color-main-transparent;
   margin: 0;
   margin-left: size(20px);
@@ -195,8 +291,14 @@
 
   @include tablet {
     font-size: size-tablet($fz-tablet);
-    letter-spacing: size-tablet(-0.3px);
+    letter-spacing: size-tablet(-0.2px);
     margin-left: size-tablet(15px);
+  }
+
+  @include mobile {
+    font-size: size-mobile($fz-tablet);
+    letter-spacing: size-mobile(-0.2px);
+    margin-left: size-mobile(10px);
   }
 }
 
@@ -205,22 +307,30 @@
   height: size(450px);
   grid-row: 1 / 2;
   margin-bottom: size(14px);
+  border-radius: 30px;
+  transition: border-radius 0.3 ease;
 
   @include tablet {
     width: size-tablet(357px);
     height: size-tablet(350px);
     margin-bottom: size-tablet(12px);
   }
+
+  @include mobile {
+    width: size-mobile(315px);
+    height: size-mobile(315px);
+    margin-bottom: size-mobile(10px);
+    border-radius: 15px;
+  }
 }
 
 .projects__gallery-image img {
-  width: size(450px);
-  height: size(450px);
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
-  @include tablet {
-    width: size-tablet(357px);
-    height: size-tablet(350px);
-    object-fit: unset;
+  @include max-tablet {
+    object-fit: fill;
   }
 }
 
@@ -232,5 +342,10 @@
 
   @include tablet {
     width: size-tablet(203px);
+  }
+
+  @include mobile {
+    width: size-mobile(345px);
+    margin: 0 auto;
   }
 }

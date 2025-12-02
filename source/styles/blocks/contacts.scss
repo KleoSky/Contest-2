@@ -10,12 +10,12 @@
 
   @include tablet {
     flex-direction: row;
-    column-gap: size-tablet(56px);
+    column-gap: size-tablet(58px);
     row-gap: unset;
   }
 
   @include mobile {
-    row-gap: size-mobile(20px);
+    row-gap: size-mobile(21px);
     padding: size-mobile(20px) size-mobile(8px) size-mobile(20px) size-mobile(20px);
   }
 }
@@ -25,7 +25,7 @@
   row-gap: size(5px);
 
   @include tablet {
-    row-gap: size-tablet(11px);
+    row-gap: size-tablet(10px);
   }
 
   @include mobile {
@@ -37,9 +37,10 @@
 .contacts__phone,
 .contacts__tg-address {
   font-size: size(18px);
-  line-height: 125%;
+  line-height: 1.25;
+  font-weight: 500;
   letter-spacing: size(-0.2px);
-  text-underline-offset: 4px;
+  text-underline-offset: size(4px);
   color: inherit;
   transition: color 0.3s ease;
 
@@ -51,10 +52,14 @@
 
   @include tablet {
     font-size: size-tablet(15px);
+    letter-spacing: size-tablet(-0.2px);
+    text-underline-offset: size-tablet(4px);
   }
 
   @include mobile {
     font-size: size-mobile(15px);
+    letter-spacing: size-mobile(-0.2px);
+    text-underline-offset: size-mobile(4px);
   }
 }
 
@@ -88,6 +93,7 @@
 
   @include tablet {
     font-size: size-tablet(13px);
+    letter-spacing: size-tablet(-0.5px);
   }
 
   @include mobile {

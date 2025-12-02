@@ -1,7 +1,7 @@
 import { initMenu } from './modules/burger-menu';
-import { renderProjects } from './modules/projects-render';
+import { initProjectsReorganizer } from './modules/projects-reorganizer';
 
 window.addEventListener('DOMContentLoaded', () => {
   initMenu();
-  renderProjects();
+  initProjectsReorganizer();
 });
