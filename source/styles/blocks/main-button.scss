@@ -34,12 +34,14 @@
 
   @include tablet {
     font-size: size-tablet(13px);
+    letter-spacing: size-tablet(-0.4px);
     border-radius: 12px;
     padding: size-tablet(16px);
   }
 
   @include mobile {
     font-size: size-mobile(13px);
+    letter-spacing: size-mobile(-0.4px);
     border-radius: 10px;
     padding: size-mobile(16px);
   }
