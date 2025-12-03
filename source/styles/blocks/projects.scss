@@ -16,7 +16,7 @@
   border-top: 1px solid $color-liner;
   display: grid;
   grid-template-rows: size(39px) min-content size(39px) min-content min-content;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(2, 1fr);
   position: relative;
 
   &::before {
@@ -156,8 +156,9 @@
 }
 
 .projects__gallery-wrapper {
-  // min-width: size(1382px);
+  width: size(1382px);
   min-height: auto;
+  margin: 0 auto;
   display: flex;
   flex-flow: column wrap;
   grid-row: 4 / 5;
@@ -165,11 +166,12 @@
   margin-bottom: size(79px);
 
   @include tablet {
-    // min-width: size-tablet(728px);
+    width: size-tablet(728px);
     margin-bottom: size-tablet(50px);
   }
 
   @include mobile {
+    width: unset;
     margin-bottom: size-mobile(42px);
     padding-left: size-mobile(15px);
   }

@@ -69,6 +69,7 @@
 }
 
 .contacts__main--footer a {
+  width: max-content;
   font-size: size(22px);
   letter-spacing: size(-0.1px);
 
@@ -84,6 +85,7 @@
 }
 
 .contacts__tg--footer a {
+  width: max-content;
   font-size: size(24px);
   letter-spacing: size(-0.2px);
   text-underline-offset: size(5px);
