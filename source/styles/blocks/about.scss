@@ -5,7 +5,7 @@
 
   @include tablet {
     grid-template-columns: repeat(2, size-tablet(363px));
-    grid-template-rows: min-content size-tablet(24px) min-content size-tablet(25px) size-tablet(15px) min-content;
+    grid-template-rows: min-content size-tablet(16px) min-content size-tablet(25px) size-tablet(15px) min-content;
     column-gap: size-tablet(22px);
   }
 
@@ -160,74 +160,16 @@
   }
 }
 
-.about__misson-presentation {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+.about__presentation {
   margin: size(7px) 0 0 size(40px);
-  gap: size(10px) size(5px);
   grid-column: 3 / 4;
   grid-row: 3 / 4;
 
   @include tablet {
     margin: 0;
     margin-top: size-tablet(4px);
-    gap: size-tablet(10px) size-tablet(5px);
     grid-column: 1 / 2;
     grid-row: 4 / 7;
-  }
-
-  @include mobile {
-    display: none;
-  }
-}
-
-.about__misson-file,
-.about__misson-pitch {
-  font-family: $ff-second;
-  font-size: size(14px);
-  font-weight: 600;
-  line-height: 120%;
-  letter-spacing: size(-0.4px);
-  text-decoration: none;
-  color: inherit;
-  background-color: $color-second;
-  border-radius: 15px;
-  padding: size(16px);
-  transition: background-color 0.3s ease;
-
-  &:hover,
-  &:focus,
-  &:focus-visible,
-  &:active {
-    background-color: $background-accent;
-  }
-
-  @include tablet {
-    font-size: size-tablet(13px);
-    border-radius: 12px;
-    padding: size-tablet(15px);
-  }
-}
-
-.about__misson-pitch {
-  @include tablet {
-    padding: size-tablet(15px) size-tablet(13px);
-  }
-}
-
-.about__misson-presentation span {
-  font-family: $ff-second;
-  font-size: size(13px);
-  line-height: 110%;
-  letter-spacing: size(-0.5px);
-  text-transform: lowercase;
-  color: $color-main-transparent;
-  margin-left: size(6px);
-
-  @include tablet {
-    font-size: size-tablet(13px);
-    margin-left: size-tablet(5px);
   }
 }
 

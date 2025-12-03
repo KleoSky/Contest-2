@@ -16,14 +16,12 @@
 .hero__awards-item,
 .hero__awards-tooltip,
 .hero__awards-tooltip-icon,
-.hero__awards-main,
-.hero__awards-link {
+.hero__awards-main {
   display: flex;
 }
 
 .hero__awards-main,
-.hero__awards-tooltip-icon,
-.hero__awards-link {
+.hero__awards-tooltip-icon {
   justify-content: center;
   align-items: center;
 }
@@ -199,7 +197,9 @@
   align-items: center;
   position: relative;
 
-  &:hover .hero__awards-tooltip {
+  &:has(.hero__awards-link:hover) .hero__awards-tooltip,
+  &:has(.hero__awards-link:focus) .hero__awards-tooltip,
+  &:has(.hero__awards-link:focus-visible) .hero__awards-tooltip {
     opacity: 1;
     transform: translateX(-5px);
 
@@ -259,21 +259,6 @@
   letter-spacing: size(-0.5px);
   text-align: center;
   color: $color-main-transparent-second;
-}
-
-.hero__awards-link {
-  width: size(48px);
-  height: size(48px);
-  padding: size(10px) size(5px);
-  background-color: $color-second;
-  border-radius: 12px;
-  transition: background-color 0.3s ease;
-
-  &:hover,
-  &:focus,
-  &:focus-visible {
-    background-color: $background-accent;
-  }
 }
 
 .hero__awards-link img {

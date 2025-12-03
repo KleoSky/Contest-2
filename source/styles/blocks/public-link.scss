@@ -1,0 +1,29 @@
+.public-link {
+  width: size(48px);
+  height: size(48px);
+  padding: size(10px) size(5px);
+  background-color: $color-second;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    background-color: $background-accent;
+  }
+
+  @include tablet {
+    width: size-tablet(48px);
+    height: size-tablet(48px);
+    padding: size-tablet(10px) size-tablet(5px);
+  }
+
+  @include mobile {
+    width: size-mobile(48px);
+    height: size-mobile(48px);
+    padding: size-mobile(10px) size-mobile(5px);
+  }
+}

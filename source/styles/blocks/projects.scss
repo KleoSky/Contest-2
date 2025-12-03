@@ -1,6 +1,6 @@
 .projects {
-  min-height: size(1879px);
-  padding: size(130px) size(28px) size(141px) size(30px);
+  // min-height: size(2020px);
+  padding: size(130px) size(28px) 0 size(30px);
 
   @include tablet {
     padding: size-tablet(78px) size-tablet(20px) 0;
@@ -16,7 +16,7 @@
   border-top: 1px solid $color-liner;
   display: grid;
   grid-template-rows: size(39px) min-content size(39px) min-content min-content;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, auto);
   position: relative;
 
   &::before {
@@ -156,7 +156,7 @@
 }
 
 .projects__gallery-wrapper {
-  min-width: size(1382px);
+  // min-width: size(1382px);
   min-height: auto;
   display: flex;
   flex-flow: column wrap;
@@ -165,12 +165,12 @@
   margin-bottom: size(79px);
 
   @include tablet {
-    min-width: size-tablet(728px);
+    // min-width: size-tablet(728px);
     margin-bottom: size-tablet(50px);
   }
 
   @include mobile {
-    margin-bottom: size-mobile(40px);
+    margin-bottom: size-mobile(42px);
     padding-left: size-mobile(15px);
   }
 }
@@ -219,6 +219,7 @@
 .projects__gallery-slide {
   width: size(450px);
   height: auto;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
 
   @include tablet {
     width: size-tablet(357px);
@@ -237,7 +238,6 @@
   display: grid;
   grid-template-rows: repeat(3, min-content);
   row-gap: size(11px);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
   @include tablet {
     row-gap: size-tablet(8px);
@@ -248,14 +248,15 @@
   }
 }
 
-.projects__gallery-slide a:hover .projects__gallery-image {
-  // border-radius: 70px;
-  transform: scale(1.03);
-
-  img {
-    border-radius: 80px;
-  }
+.projects__gallery-slide:hover .projects__gallery-image,
+.projects__gallery-slide:focus .projects__gallery-image,
+.projects__gallery-slide:focus-visible .projects__gallery-image {
+  opacity: 0.8;
+  border-radius: 80px;
+  transform: scale(1.04);
+  transform-origin: center center;
 }
+
 
 .projects__gallery-slide h4 {
   font-family: $ff-second;
@@ -308,7 +309,14 @@
   grid-row: 1 / 2;
   margin-bottom: size(14px);
   border-radius: 30px;
-  transition: border-radius 0.3 ease;
+  overflow: hidden;
+  transform: scale(1);
+  transition: opacity 0.3s ease, border-radius 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center center;
+  will-change: transform, border-radius;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+
 
   @include tablet {
     width: size-tablet(357px);
@@ -327,7 +335,6 @@
 .projects__gallery-image img {
   width: 100%;
   height: 100%;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
   @include max-tablet {
     object-fit: fill;

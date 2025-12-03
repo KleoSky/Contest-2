@@ -1,0 +1,11 @@
+.banners {
+  min-height: size(730px);
+
+  @include tablet {
+    min-height: size-tablet(510px);
+  }
+
+  @include mobile {
+    display: none;
+  }
+}
