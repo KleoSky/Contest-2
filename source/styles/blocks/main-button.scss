@@ -32,6 +32,17 @@
       0 24px 19px -30px rgba(14, 14, 14, 0.25);
   }
 
+  &:active:not(:disabled) {
+    border-radius: 15px;
+  }
+
+  &:disabled {
+    color: inherit;
+    background-color: $color-liner;
+    border-radius: 40px;
+    cursor: default;
+  }
+
   @include tablet {
     font-size: size-tablet(13px);
     letter-spacing: size-tablet(-0.4px);

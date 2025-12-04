@@ -6,7 +6,7 @@
 }
 
 .contacts {
-  row-gap: size(39px);
+  row-gap: size(24px);
 
   @include tablet {
     flex-direction: row;
@@ -15,7 +15,7 @@
   }
 
   @include mobile {
-    row-gap: size-mobile(21px);
+    row-gap: size-mobile(14px);
     padding: size-mobile(20px) size-mobile(8px) size-mobile(20px) size-mobile(20px);
   }
 }
@@ -30,6 +30,77 @@
 
   @include mobile {
     row-gap: size-mobile(8px);
+  }
+}
+
+.contacts__main--hero {
+  margin-bottom: size(15px);
+}
+
+.contacts__main--footer {
+  row-gap: size(4px);
+
+  @include tablet {
+    row-gap: size-tablet(4px);
+  }
+
+  @include mobile {
+    row-gap: size-mobile(16px);
+  }
+}
+
+.contacts__tg--footer {
+  row-gap: size(6px);
+
+  @include tablet {
+    row-gap: size-tablet(6px);
+  }
+
+  @include mobile {
+    margin-left: size-mobile(2px);
+    row-gap: size-mobile(6px);
+    align-self: flex-start;
+  }
+}
+
+.contacts__main--footer a,
+.contacts__tg--footer a {
+  line-height: 1.2;
+}
+
+.contacts__main--footer a {
+  width: max-content;
+  font-size: size(22px);
+  letter-spacing: size(-0.1px);
+
+  @include tablet {
+    font-size: size-tablet($fz-default);
+    letter-spacing: size-tablet(-0.1px);
+  }
+
+  @include mobile {
+    font-size: size-mobile($fz-default);
+    letter-spacing: size-mobile(-0.1px);
+  }
+}
+
+.contacts__tg--footer a {
+  width: max-content;
+  font-size: size(24px);
+  letter-spacing: size(-0.2px);
+  text-underline-offset: size(5px);
+
+  @include tablet {
+    font-size: size-tablet(24px);
+    letter-spacing: size-tablet(-0.2px);
+    text-underline-offset: size-tablet(5px);
+  }
+
+  @include mobile {
+    font-size: size-mobile(24px);
+    letter-spacing: size-mobile(-0.2px);
+    text-underline-offset: size-mobile(5px);
+    flex-direction: row-reverse;
   }
 }
 
@@ -81,6 +152,18 @@
 
   width: size-mobile(14px);
   height: size-mobile(14px);
+}
+
+.contacts__phone--footer {
+  text-underline-offset: size(5px);
+
+  @include tablet {
+    text-underline-offset: size-tablet(5px);
+  }
+
+  @include mobile {
+    text-underline-offset: size-mobile(5px);
+  }
 }
 
 .contacts__tg-text {
