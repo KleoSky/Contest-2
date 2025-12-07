@@ -18,7 +18,7 @@
   padding: 0;
   list-style: none;
   flex-wrap: wrap;
-  gap: size(20px) size(11px);
+  gap: 0 size(11px);
 
   @include max-tablet {
     width: 100vw;
@@ -140,7 +140,7 @@
 }
 
 .main-nav__statistic-icon {
-  width: size(36px);
+  min-width: size(36px);
   height: size(36px);
   color: $color-second;
   background-color: $color-main;

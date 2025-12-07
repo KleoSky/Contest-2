@@ -8,6 +8,19 @@
   }
 }
 
+@mixin reduce-motion-styles {
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    transform: none;
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    opacity: 1;
+
+    @content;
+  }
+}
+
 @mixin vp-1439 {
   @media (max-width: ($vp-1440 - 1px)) {
     @content;

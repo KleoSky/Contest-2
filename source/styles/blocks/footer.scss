@@ -99,7 +99,7 @@
 
     &--footer {
       padding: 0;
-      row-gap: size-mobile(23px);
+      row-gap: size-mobile(24px);
     }
   }
 }
@@ -209,16 +209,16 @@
 }
 
 .footer__social-item {
-  width: size(48px);
+  min-width: size(48px);
   height: size(48px);
 
   @include tablet {
-    width: size-tablet(48px);
+    min-width: size-tablet(48px);
     height: size-tablet(48px);
   }
 
   @include mobile {
-    width: size-mobile(48px);
+    min-width: size-mobile(48px);
     height: size-mobile(48px);
   }
 }
@@ -230,6 +230,7 @@
   font-weight: 600;
   letter-spacing: size(-0.4px);
   text-decoration: none;
+  text-align: center;
   color: inherit;
 
   @include tablet {
@@ -313,6 +314,7 @@
 
   @include mobile {
     margin-bottom: size-mobile(8px);
+    margin-left: size-mobile(-2px);
     flex-direction: column;
     gap: size-mobile(11px) 0;
   }
@@ -326,6 +328,8 @@
   letter-spacing: size(-0.9px);
   text-transform: lowercase;
   margin: 0;
+  opacity: 0;
+  will-change: opacity, transform;
 
   @include tablet {
     font-size: size-tablet(46px);

@@ -1,5 +1,4 @@
 .projects {
-  // min-height: size(2020px);
   padding: size(130px) size(28px) 0 size(30px);
 
   @include tablet {
@@ -48,7 +47,6 @@
     border: none;
     display: flex;
     flex-direction: column;
-    overflow: visible;
   }
 }
 
@@ -93,7 +91,7 @@
   @include mobile {
     font-size: size-mobile(20px);
     letter-spacing: size-mobile(-0.6px);
-    margin-bottom: size-mobile(15px);
+    margin-bottom: size-mobile(14px);
   }
 }
 
@@ -104,6 +102,7 @@
 
   font-size: size-mobile($fz-tablet);
   font-weight: 400;
+  line-height: 1.43;
   letter-spacing: size-mobile(-0.4px);
   margin: 0;
   margin-bottom: size-mobile(8px);
@@ -171,9 +170,11 @@
   }
 
   @include mobile {
-    width: unset;
+    width: 100%;
     margin-bottom: size-mobile(42px);
     padding-left: size-mobile(15px);
+    position: relative;
+    overflow: hidden;
   }
 }
 
@@ -190,6 +191,7 @@
     display: none;
   }
 
+  max-width: size-mobile(345px);
   font-family: $ff-second;
   font-size: size-mobile(20px);
   font-weight: 600;
@@ -221,14 +223,17 @@
 .projects__gallery-slide {
   width: size(450px);
   height: auto;
+  min-height: size(527px);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
 
   @include tablet {
     width: size-tablet(357px);
+    min-height: size-tablet(415px);
   }
 
   @include mobile {
     width: size-mobile(315px);
+    min-height: size-mobile(373px);
   }
 }
 
@@ -237,9 +242,16 @@
   height: auto;
   text-decoration: none;
   color: inherit;
+  border-radius: 30px;
   display: grid;
   grid-template-rows: repeat(3, min-content);
   row-gap: size(11px);
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    border-radius: 85px 85px 60px 60px;
+  }
 
   @include tablet {
     row-gap: size-tablet(8px);
@@ -250,9 +262,9 @@
   }
 }
 
-.projects__gallery-slide:hover .projects__gallery-image,
-.projects__gallery-slide:focus .projects__gallery-image,
-.projects__gallery-slide:focus-visible .projects__gallery-image {
+.projects__gallery-slide a:hover .projects__gallery-image,
+.projects__gallery-slide a:focus .projects__gallery-image,
+.projects__gallery-slide a:focus-visible .projects__gallery-image {
   opacity: 0.8;
   border-radius: 80px;
   transform: scale(1.04);
@@ -300,6 +312,7 @@
 
   @include mobile {
     font-size: size-mobile($fz-tablet);
+    line-height: 1.29;
     letter-spacing: size-mobile(-0.2px);
     margin-left: size-mobile(10px);
   }
@@ -324,6 +337,7 @@
     width: size-tablet(357px);
     height: size-tablet(350px);
     margin-bottom: size-tablet(12px);
+    border-radius: 20px;
   }
 
   @include mobile {
