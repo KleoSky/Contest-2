@@ -197,7 +197,6 @@ export function buildProd (done) {
 
 export function runDev (done) {
   series(
-    removeBuild,
     parallel(
       processMarkup,
       processStyles,

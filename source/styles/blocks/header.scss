@@ -27,18 +27,12 @@
 }
 
 .header__logo-text {
-  height: min-content;
-}
-
-.header__logo-text img {
   width: size(73px);
-  height: size(34px);
-  line-height: 1;
-  display: block;
-  transition: opacity 0.3s ease;
+  height: size(24px);
 
   &:hover,
-  &:focus {
+  &:focus,
+  &:focus-visible {
     opacity: 0.8;
   }
 
@@ -51,4 +45,10 @@
     width: size-mobile(52px);
     height: size-mobile(17px);
   }
+}
+
+.header__logo-text img {
+  line-height: 1;
+  display: block;
+  transition: opacity 0.3s ease;
 }

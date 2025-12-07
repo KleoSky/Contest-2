@@ -45,7 +45,7 @@
   }
 
   @include mobile {
-    row-gap: size-mobile(16px);
+    row-gap: size-mobile(15px);
   }
 }
 
@@ -57,10 +57,15 @@
   }
 
   @include mobile {
+    max-width: size-mobile(345px);
     margin-left: size-mobile(2px);
     row-gap: size-mobile(6px);
     align-self: flex-start;
   }
+}
+
+.contacts__tg--footer svg {
+  margin-top: size-mobile(4px);
 }
 
 .contacts__main--footer a,
@@ -80,7 +85,7 @@
 
   @include mobile {
     font-size: size-mobile($fz-default);
-    letter-spacing: size-mobile(-0.1px);
+    letter-spacing: size-mobile(-0.2px);
   }
 }
 
@@ -150,7 +155,7 @@
     display: none;
   }
 
-  width: size-mobile(14px);
+  min-width: size-mobile(14px);
   height: size-mobile(14px);
 }
 
@@ -162,7 +167,7 @@
   }
 
   @include mobile {
-    text-underline-offset: size-mobile(5px);
+    text-underline-offset: size-mobile(4px);
   }
 }
 

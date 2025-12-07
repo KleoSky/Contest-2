@@ -44,11 +44,23 @@
 
   &--opened {
     &::before {
-      transform: translateY(3px) rotate(45deg);
+      transform: translateY(size-tablet(3px)) rotate(45deg);
     }
 
     &::after {
-      transform: translateY(-3px) rotate(-45deg);
+      transform: translateY(size-tablet(-3px)) rotate(-45deg);
+    }
+  }
+
+  .button-burger--opened::before {
+    @include mobile {
+      transform: translateY(size-mobile(3px)) rotate(45deg);
+    }
+  }
+
+  .button-burger--opened::after {
+    @include mobile {
+      transform: translateY(size-mobile(-3px)) rotate(-45deg);
     }
   }
 

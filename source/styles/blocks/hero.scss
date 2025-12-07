@@ -82,6 +82,7 @@
 }
 
 .hero__title {
+  max-width: size(462px);
   font-family: $ff-second;
   font-size: size(50px);
   font-weight: 600;
@@ -91,19 +92,20 @@
   margin: 0;
   margin-right: size(53px);
   margin-bottom: size(28px);
-  z-index: 1;
 
   @include max-tablet {
     margin-right: 0;
   }
 
   @include tablet {
+    max-width: size-tablet(368px);
     font-size: size-tablet(38px);
     letter-spacing: size-tablet(-0.4px);
     margin-bottom: size-tablet(114px);
   }
 
   @include mobile {
+    max-width: unset;
     font-size: size-mobile(32px);
     letter-spacing: size-mobile(-0.3px);
     margin-bottom: size-mobile(98px);
@@ -214,6 +216,10 @@
       transform: translateX(-5px);
     }
   }
+}
+
+.hero__awards-link {
+  min-width: size(48px);
 }
 
 .hero__awards-tooltip {
