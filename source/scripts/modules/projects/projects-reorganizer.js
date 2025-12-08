@@ -1,3 +1,6 @@
+const categoriesContainer = document.querySelector('.projects__gallery-categories');
+const notMobileContainer = document.querySelector('.projects__gallery-slider--notmobile');
+const allSlides = document.querySelectorAll('.projects__gallery-slide');
 let currentMode = null;
 let isProcessing = false;
 
@@ -18,13 +21,8 @@ const reorganizeProjects = () => {
       return;
     }
 
-    const categoriesContainer = document.querySelector('.projects__gallery-categories');
-    const notMobileContainer = document.querySelector('.projects__gallery-slider--notmobile');
-
     if (isNotMobile) {
       notMobileContainer.innerHTML = '';
-
-      const allSlides = document.querySelectorAll('.projects__gallery-slide');
 
       allSlides.forEach((slide, index) => {
         const clone = slide.cloneNode(true);

@@ -258,7 +258,6 @@
   }
 
   @include mobile {
-    // width: unset;
     min-width: size-mobile(315px);
     width: calc(100% - size-mobile(70px));
     min-height: size-mobile(373px);

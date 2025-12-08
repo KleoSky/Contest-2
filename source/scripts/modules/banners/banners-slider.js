@@ -10,6 +10,21 @@ const initBannersSlider = () => {
   let currentSlide = 0;
   let gap = '';
 
+  const updateButtonsVisibility = () => {
+    slides.forEach((slide, index) => {
+      const button = slide.querySelector('.banner__button');
+      if (button) {
+        if (index === currentSlide) {
+          button.dataset.hidden = 'false';
+          button.setAttribute('tabindex', '0');
+        } else {
+          button.dataset.hidden = 'true';
+          button.setAttribute('tabindex', '-1');
+        }
+      }
+    });
+  };
+
   const goToSlide = (index) => {
     if (index === currentSlide || index < 0 || index >= slides.length) {
       return slides[currentSlide];
@@ -38,6 +53,7 @@ const initBannersSlider = () => {
     }
   }
 
+  updateButtonsVisibility();
 
   function moveSlideList(index) {
     if (!slides[0]) {

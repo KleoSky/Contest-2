@@ -17,6 +17,11 @@
 .banners__slides-container {
   width: 100%;
   overflow: hidden;
+
+  @include large-width {
+    max-width: 2764px;
+    margin: 0 auto;
+  }
 }
 
 .banners__slides-list {
@@ -26,6 +31,15 @@
   display: flex;
   column-gap: size(30px);
   transition: transform 0.5s ease;
+
+  &:focus-within {
+    scroll-snap-type: none;
+  }
+
+  @include large-width {
+    max-width: 2764px;
+    margin: 0 auto;
+  }
 
   @include tablet {
     column-gap: size-tablet(20px);
@@ -78,6 +92,10 @@
 }
 
 .banners__slide:not(.banners__slide--active) {
+  contain: style;
+}
+
+.banners__slide:not(.banners__slide--active) .banner__button {
   pointer-events: none;
 }
 
@@ -113,6 +131,12 @@
   left: size(40px);
   display: flex;
   column-gap: size(10px);
+
+  @include large-width {
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
   @include tablet {
     bottom: size-tablet(26px);

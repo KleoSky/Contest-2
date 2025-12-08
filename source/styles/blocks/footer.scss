@@ -95,6 +95,7 @@
   }
 
   @include mobile {
+    max-width: size-mobile(345px);
     margin: 0;
 
     &--footer {
@@ -308,6 +309,7 @@
   grid-column: 1 / -1;
 
   @include tablet {
+    max-width: size-tablet(728px);
     margin-bottom: size-tablet(5px);
     column-gap: size-tablet(12px);
   }
@@ -357,6 +359,10 @@
   &:focus,
   &:focus-visible {
     opacity: 0.3;
+  }
+
+  @include max-tablet {
+    width: unset;
   }
 
   @include tablet {

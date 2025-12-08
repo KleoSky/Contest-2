@@ -6,6 +6,13 @@
   <meta name="description" content="Создание digital-пространства для девелоперов и проектов ЖК">
   <title>Only Digital</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preload" href="fonts/tt-commons-pro/tt-commons-pro-trial-400.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/tt-commons-pro/tt-commons-pro-trial-500.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/tt-runs-trial/tt-runs-trial-500.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/tt-runs-trial/tt-runs-trial-600.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/tt-runs-trial/tt-runs-trial-700.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/tt-runs-trial/tt-runs-trial-800.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="videos/hero-video.mp4" as="video" type="video/mp4" crossorigin="anonymous">
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="icon" href="favicon.ico">
   <link rel="icon" href="favicons/icon.svg" type="image/svg+xml">
@@ -72,12 +79,6 @@
       <div class="hero__wrapper container">
         <div class="hero__main-content">
           <h1 class="hero__title">Creative digital<br>production</h1>
-          <div class="hero__video-wrapper">
-            <video autoplay muted loop>
-              <source type="video/mp4" src="videos/hero-video.mp4">
-            </video>
-            <span class="visually-hidden">Примеры выполненных проектов</span>
-          </div>
           <div class="hero__awards">
             <h2 class="visually-hidden">Награды компании</h2>
             <ul class="hero__awards-list">
@@ -162,6 +163,14 @@
                 </div>
               </li>
             </ul>
+          </div>
+        </div>
+        <div class="hero__video-wrapper">
+          <div class="hero__video">
+            <video autoplay muted loop playsinline preload="metadata" loading="eager">
+              <source type="video/mp4" src="videos/hero-video.mp4">
+            </video>
+            <span class="visually-hidden">Примеры выполненных проектов</span>
           </div>
         </div>
         <div class="hero__description about">
@@ -731,7 +740,7 @@
       </section>
     </div>
   </footer>
-  <script type="module" src="scripts/index.js" defer></script>
+  <script type="module" src="scripts/index.js"></script>
 </body>
 
 </html>

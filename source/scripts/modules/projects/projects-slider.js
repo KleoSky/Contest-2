@@ -1,6 +1,6 @@
 const initProjectsSlider = () => {
   const initSliders = () => {
-    document.querySelectorAll('.projects__gallery-slider:not(.projects__gallery-slider--notmobile)').forEach(slider => {
+    document.querySelectorAll('.projects__gallery-slider:not(.projects__gallery-slider--notmobile)').forEach((slider) => {
       const slides = slider.querySelectorAll('.projects__gallery-slide');
 
       if (slides.length > 1 && slider.scrollWidth > slider.clientWidth) {
