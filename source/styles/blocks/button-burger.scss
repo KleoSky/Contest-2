@@ -50,17 +50,15 @@
     &::after {
       transform: translateY(size-tablet(-3px)) rotate(-45deg);
     }
-  }
 
-  .button-burger--opened::before {
     @include mobile {
-      transform: translateY(size-mobile(3px)) rotate(45deg);
-    }
-  }
+      &::before {
+        transform: translateY(size-mobile(3px)) rotate(45deg);
+      }
 
-  .button-burger--opened::after {
-    @include mobile {
-      transform: translateY(size-mobile(-3px)) rotate(-45deg);
+      &::after {
+        transform: translateY(size-mobile(-3px)) rotate(-45deg);
+      }
     }
   }
 

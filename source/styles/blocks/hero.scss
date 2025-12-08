@@ -33,6 +33,7 @@
   flex-direction: column;
   row-gap: size(110px);
   position: relative;
+  overflow: visible;
 
   &::before,
   &::after {
@@ -72,12 +73,12 @@
   @include tablet {
     min-height: size-tablet(920px);
     padding-bottom: size-tablet(20px);
-    row-gap: size-tablet(190px);
+    row-gap: size-tablet(30px);
   }
 
   @include mobile {
     padding-bottom: size-mobile(16px);
-    row-gap: size-mobile(82px);
+    row-gap: 0;
   }
 }
 
@@ -119,18 +120,18 @@
   position: relative;
 
   @include max-tablet {
+    min-height: max-content;
+    display: block;
     flex-direction: column;
+    row-gap: unset;
   }
 
   @include tablet {
     min-width: size-tablet(728px);
-    min-height: size-tablet(466px);
-    row-gap: size-tablet(30px);
   }
 
   @include mobile {
     min-width: size-mobile(345px);
-    min-height: size-mobile(313px);
   }
 }
 
@@ -148,13 +149,16 @@
 }
 
 .hero__video-wrapper {
-  width: size(456px);
-  height: size(230px);
-  align-self: flex-end;
-
-  @include max-desktop {
-    width: calc(size(456px) + 1em);
-    height: calc(size(230px) + 1em);
+  @include desktop {
+    position: absolute;
+    inset: 0;
+    top: -23%;
+    transform: translateY(0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    z-index: 1;
   }
 
   @include max-tablet {
@@ -162,11 +166,28 @@
     margin: 0 auto;
   }
 
-  @include tablet-etalon {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, -100%);
+  @include tablet {
+    margin-bottom: size-tablet(161px);
+  }
+
+  @include mobile {
+    margin-bottom: size-mobile(82px);
+  }
+}
+
+.hero__video {
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: top center;
+  will-change: width, height;
+
+  @include large-width {
+    width: size(456px);
+    height: size(230px);
+  }
+
+  @include medium-desktop {
+    width: size(456px);
+    height: size(230px);
   }
 
   @include tablet {
@@ -180,7 +201,7 @@
   }
 }
 
-.hero__video-wrapper video {
+.hero__video video {
   width: 100%;
   height: 100%;
   object-fit: fill;
@@ -213,7 +234,7 @@
     .hero__awards-tooltip-icon,
     .hero__awards-tooltip-text {
       opacity: 1;
-      transform: translateX(-5px);
+      transform: translateX(0);
     }
   }
 }
@@ -238,7 +259,7 @@
 }
 
 .hero__awards-tooltip-icon {
-  width: size(32px);
+  min-width: size(32px);
   height: size(32px);
   background-color: $background-accent;
   border-radius: 12px;

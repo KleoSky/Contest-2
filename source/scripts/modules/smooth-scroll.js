@@ -1,8 +1,4 @@
-const initScrollListener = () => {
-  if (window.innerWidth <= 375) {
-    return null;
-  }
-
+const initScrollAnimationListener = () => {
   const scrollSections = document.querySelectorAll('.scroll-section');
   if (scrollSections.length === 0) {
     return null;
@@ -28,6 +24,4 @@ const initScrollListener = () => {
   return observer;
 };
 
-export { initScrollListener };
-
-
+export { initScrollAnimationListener };

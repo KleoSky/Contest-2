@@ -1,9 +1,9 @@
 import { initBannersSlider } from './banners/banners-slider.js';
-import { initScrollListener } from './smooth-scroll.js';
+import { initScrollAnimationListener } from './smooth-scroll.js';
 
 const initTransform = () => {
   const slider = initBannersSlider();
-  const observer = initScrollListener();
+  const observer = initScrollAnimationListener();
 
   if (slider) {
     const originalGoToSlide = slider.goToSlide;

@@ -22,12 +22,14 @@ const openMenu = () => {
 
   setTimeout(() => {
     document.addEventListener('click', handleOutsideClick);
+    menu.addEventListener('click', handleMenuLinkClick, true);
   }, 10);
 };
 
 const toggleMenu = () => {
   if (isMenuOpen()) {
     closeMenu();
+    menu.removeEventListener('click', handleMenuLinkClick, true);
   } else {
     openMenu();
   }
@@ -38,6 +40,38 @@ function handleOutsideClick(e) {
     !e.target.closest('.main-nav__list') &&
     !e.target.closest('.button-burger')) {
     closeMenu();
+    menu.removeEventListener('click', handleMenuLinkClick, true);
+  }
+}
+
+function smoothScrollTo(targetId) {
+  const target = document.querySelector(targetId);
+  if (target) {
+    target.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+}
+
+function handleMenuLinkClick(e) {
+  const link = e.target.closest('.main-nav__link');
+
+  if (link && isMenuOpen()) {
+    const href = link.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      closeMenu();
+      menu.removeEventListener('click', handleMenuLinkClick, true);
+
+      setTimeout(() => {
+        smoothScrollTo(href);
+      }, 200);
+
+      return false;
+    }
   }
 }
 
