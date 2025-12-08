@@ -213,7 +213,7 @@
     .hero__awards-tooltip-icon,
     .hero__awards-tooltip-text {
       opacity: 1;
-      transform: translateX(-5px);
+      transform: translateX(0);
     }
   }
 }
@@ -238,10 +238,13 @@
 }
 
 .hero__awards-tooltip-icon {
-  width: size(32px);
+  min-width: size(32px);
   height: size(32px);
   background-color: $background-accent;
   border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transform: translateX(10px);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
   opacity: 0;

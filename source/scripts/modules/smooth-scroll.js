@@ -1,8 +1,4 @@
 const initScrollListener = () => {
-  if (window.innerWidth <= 375) {
-    return null;
-  }
-
   const scrollSections = document.querySelectorAll('.scroll-section');
   if (scrollSections.length === 0) {
     return null;
