@@ -16,7 +16,7 @@ const initBannersSlider = () => {
       if (button) {
         if (index === currentSlide) {
           button.dataset.hidden = 'false';
-          button.setAttribute('tabindex', '0');
+          button.setAttribute('tabindex', '1');
         } else {
           button.dataset.hidden = 'true';
           button.setAttribute('tabindex', '-1');
